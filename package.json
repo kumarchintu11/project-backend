@@ -5,13 +5,15 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-"script": "nodemon src/index.js"  },
+    "script": "nodemon src/index.js"
+  },
   "keywords": [
     "JavaScripts"
   ],
   "author": "Chintu Kumar",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.4",
+    "prettier": "^3.3.3"
   }
 }
