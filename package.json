@@ -2,13 +2,16 @@
   "name": "project-backend",
   "version": "1.0.0",
   "description": "It's a project backend.",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+"script": "nodemon src/index.js"  },
   "keywords": [
     "JavaScripts"
   ],
   "author": "Chintu Kumar",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
 }
