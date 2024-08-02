@@ -1,0 +1,2 @@
+PORT = 8000
+MONGOBD_URI =mongodb+srv://chintuk23101999:<your-password>@cluster1.wm8kmpm.mongodb.net/
