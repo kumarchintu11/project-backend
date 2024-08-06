@@ -15,12 +15,22 @@ app.use(express.urlencoded({extended: true, limit:"16kb"})) // extended alloe ne
 
 
 // somthing that we want to store in our own server such as images, pdf, etc.
-app.use(express.static)
-
+// app.use(express.static)
+// import path from "path";  // Import path module
+// // Path to static files
+// const staticFilesPath = path.join(__dirname, 'public');  // Ensure 'public' directory exists in your project root
+// app.use(express.static(staticFilesPath));
 app.use(cookieParser())
 
 
 
+
+// routes import
+import userRouter from "./routes/user.routes.js"
+
+// routes declarations
+// app.use("/users", userRouter)
+app.use("/api/v1/users", userRouter)
 
 
 
