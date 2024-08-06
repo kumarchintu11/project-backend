@@ -55,7 +55,7 @@ const userSchema = new Schema(
 // it is a hook
 userSchema.pre("save", async function (next) {
     if(this.isModified("password")) return next(); // if not modified then go to next
-    this.password = bcrypt.hash(this.password, 10); // encrypt the password.
+    this.password = await bcrypt.hash(this.password, 10); // encrypt the password.
     next();
 }); /* here don't use arrow function because 
 it doen't have contect ogf this. hence we will not 
