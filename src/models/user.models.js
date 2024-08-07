@@ -53,12 +53,17 @@ const userSchema = new Schema(
 
 
 // it is a hook
+// it is a hook
 userSchema.pre("save", async function (next) {
-    if(this.isModified("password")) return next(); // if not modified then go to next
-    this.password = await bcrypt.hash(this.password, 10); // encrypt the password.
+    if (!this.isModified("password")) {
+        console.log("Password not modified, skipping hashing");
+        return next(); 
+    }
+    console.log("Hashing password");
+    this.password = await bcrypt.hash(this.password, 10); // Encrypt the password
     next();
 }); /* here don't use arrow function because 
-it doen't have contect ogf this. hence we will not 
+it doen't have context of this. hence we will not 
 be able to access the above fields.*/
 
 userSchema.methods.isPasswordCorrect = async function (password){
